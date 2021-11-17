@@ -19,8 +19,8 @@
       </div>
 
       <div>
-        <label>Image:</label>
-        <input type="text" v-model="newProductParams.image_url" />
+        <label>Supplier:</label>
+        <input type="text" v-model="newProductParams.supplier_id" />
       </div>
       <input type="submit" value="Submit" />
     </form>
@@ -39,10 +39,10 @@ export default {
   methods: {
     submit: function () {
       axios
-        .post("/products/new", this.newProductParams)
+        .post("/products", this.newProductParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/login");
+          this.$router.push("/products");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

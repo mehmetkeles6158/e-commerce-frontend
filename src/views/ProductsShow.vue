@@ -18,10 +18,7 @@
       <b>Descripton:</b>
       {{ product.description }}
     </p>
-    <p>
-      <b>Images:</b>
-      {{ product.image_url }}
-    </p>
+    <p><button v-on:click="destroyProduct()">Delete Product</button></p>
   </div>
 </template>
 
@@ -42,9 +39,16 @@ export default {
   methods: {
     getProduct: function () {
       console.log("get product");
-      axios.get("products/" + this.$route.params.id).then((response) => {
+      axios.get(`/products/${this.$route.params.id}`).then((response) => {
         console.log(response.data);
         this.product = response.data;
+      });
+    },
+    destroyProduct: function () {
+      console.log("deleting product...");
+      axios.delete(`/products/${this.$route.params.id}`).then((response) => {
+        console.log(response.data);
+        this.$router.push("/products");
       });
     },
   },
