@@ -6,6 +6,7 @@
       <p>
         {{ product.name }}
       </p>
+      <router-link v-bind:to="`products/${product.id}`">More info</router-link>
     </div>
   </div>
 </template>

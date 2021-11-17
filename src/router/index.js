@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import ProductsIndex from '../views/ProductsIndex.vue'
 import ProductsNew from '../views/ProductsNew.vue'
+import ProductsShow from '../views/ProductsShow.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ const routes = [
     path: '/products/new',
     name: 'products-new',
     component: ProductsNew
+  },
+  {
+    path: '/products/:id',
+    name: 'products-show',
+    component: ProductsShow
   },
   {
     path: '/Signup',

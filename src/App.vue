@@ -7,7 +7,7 @@
       |
       <router-link to="/products">All Products</router-link>
       |
-      <router-link to="/products/new">Create Product</router-link>
+      <router-link to="/products/new">Add Product</router-link>
       |
       <router-link to="/Signup">Signup</router-link>
       |
